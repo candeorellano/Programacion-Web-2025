@@ -255,8 +255,91 @@ body {
     color: #fff;
 }
 
+/* Ocultar descripciones por defecto */
+.card p {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  margin-top: 0; /* para que no quede espacio vacío */
+}
+
+/* Al activarse, se despliega */
+.card p.activo {
+  max-height: 500px; /* valor grande para cubrir texto */
+  opacity: 1;
+  margin-top: 10px;
+}
+
+/* Estilo del botón */
+.btn-ver {
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  margin-top: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.btn-ver:hover {
+  background: #555;
+}
+
 * {
     box-sizing: border-box;
+}
+
+#referencias {
+    padding: 40px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+#referencias h2 {
+    margin-bottom: 30px;
+    color: #5873ad;
+}
+
+.referencias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.ref-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.ref-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.ref-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.ref-card h4 {
+    margin: 0;
+    color: #40508f;
+    font-size: 1.1rem;
+}
+
+.ref-card span {
+    font-size: 0.9rem;
+    color: #666;
 }
 
 footer {
@@ -366,4 +449,20 @@ main {
         font-size: 0.8rem;
         padding: 15px 5px;
     }
+}
+
+#btnArriba {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2e6aeb;
+  color: #fff;
+  border: none;
+  border-style: solid;
+  border-radius: 20px;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: none;
+  justify-content: center;
 }
